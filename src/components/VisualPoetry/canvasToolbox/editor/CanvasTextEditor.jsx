@@ -59,7 +59,7 @@ const CanvasTextEditor = ({ title, id }) => {
         updateInputDataAction(state.inputData + newText);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [state.canvasSize]);
   return (
     <div className="toolbox__wrapper toolbox__form" data-testid={id}>
       <ResponsiveComponent
