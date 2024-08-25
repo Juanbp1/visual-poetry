@@ -53,11 +53,12 @@ const CanvasTextEditor = ({ title, id }) => {
    * @member module:canvasToolbox/CanvasTextEditor
    */
   const generateText = useGenerateTextLoremIpsum();
-
+  
   useEffect(() => {
     const newText = generateText();
     updateInputDataAction(state.inputData + newText);
-  }, [canvasSize, updateInputDataAction]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="toolbox__wrapper toolbox__form" data-testid={id}>
       <ResponsiveComponent

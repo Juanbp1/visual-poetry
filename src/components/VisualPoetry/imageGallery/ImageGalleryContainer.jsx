@@ -82,7 +82,7 @@ const ImageGallery = () => {
     if (image) {
       navigate('/appViewer');
     }
-  }, [navigate, image]);
+  }, [navigate, image,obtainImageGalleryAction]);
 
   return (
     <div ref={pickerRef}>
