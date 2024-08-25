@@ -1,5 +1,7 @@
 # 🎨 Visual Poetry
 
+[![Deploy to Firebase](https://github.com/Juanbp1/visual-poetry/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=main)](https://github.com/Juanbp1/visual-poetry/actions/workflows/firebase-hosting-merge.yml)
+[![codecov](https://codecov.io/github/Juanbp1/visual-poetry/graph/badge.svg?token=U6IZGLOD3Z)](https://codecov.io/github/Juanbp1/visual-poetry)
 ![Estado del Proyecto](https://img.shields.io/badge/Estado-Activo-brightgreen)
 ![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-blue)
 ![Versión](https://img.shields.io/badge/Versión-1.0.0-blue)
