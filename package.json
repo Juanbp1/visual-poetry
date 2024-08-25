@@ -32,7 +32,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "jest --onlyChanged --verbose=false",
+    "test": "jest --verbose=false",
     "test-u": "npm run test -- -u",
     "test-c": "jest --detectOpenHandles --coverage --onlyChanged --verbose=false",
     "eject": "react-scripts eject",
