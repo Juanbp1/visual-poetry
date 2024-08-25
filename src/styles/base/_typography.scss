@@ -1,4 +1,4 @@
-@use '../helpers/mixins.scss/' as m;
+@use '../helpers/mixins.scss' as m;
 
 @include m.fontFace(Poppins, Bold, 700);
 @include m.fontFace(Poppins, SemiBold, 600);
