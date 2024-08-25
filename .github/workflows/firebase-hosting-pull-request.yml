@@ -32,6 +32,14 @@ jobs:
       - name: Run tests
         run: npm run test
 
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage/**/coverage.json  # Ruta a tu archivo de cobertura
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}  # Token de Codecov
+
+
       - name: Compile Sass to CSS
         run: npm run sass
 
