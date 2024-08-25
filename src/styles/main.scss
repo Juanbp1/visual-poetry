@@ -1,0 +1,21 @@
+@use './base/reset';
+@use './base/variables';
+@use './base/typography';
+@use './layout/app.scss';
+
+@use './components/dropzone';
+@use './components/sidebar';
+@use './components/canvas';
+@use './components/toolbox';
+@use './components/pickerColor';
+@use './components/textArea';
+@use './components/button';
+@use './components/loading';
+@use './components/sliderHandle';
+
+
+@use './pages/home'; 
+@use './pages/appViewer';
+@use './pages/notFound';
+@use './base/mediaQueries';
+

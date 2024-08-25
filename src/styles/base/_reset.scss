@@ -1,0 +1,25 @@
+@use './variables' as v;
+* {
+  margin: 0;
+  margin-block: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  border-image-width: 0;
+}
+
+html{
+  font-size: 90%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-primary;
+  width: 100%;
+  overflow-x: clip;
+}
+
+
+
+

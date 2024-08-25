@@ -1,0 +1,60 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+.button {
+  &__toolbox {
+    @include m.button(v.$color-main, v.$white);
+  }
+  &__toolboxFormats {
+    @include m.button(v.$white, v.$color-main, true);
+
+    &--png {
+      @include m.button(v.$color-main, v.$white, true);
+    }
+  }
+  &__frontepage {
+    @include m.button(v.$color-main, v.$white, false);
+    &--reverse {
+      @include m.flex(null, null, row-reverse);
+    }
+  }
+  &__frontepageArrowIcon {
+    order: 1;
+    font-size: 1.75rem;
+  }
+  &__dropzoneImage {
+    @include m.button(v.$white, v.$color-main, true);
+  }
+  &__dropzoneGallery {
+    @include m.button(v.$color-main, v.$white, false);
+  }
+  &__exampleGallery {
+    @include m.button(v.$white, v.$color-third, false);
+  }
+
+  &__sidebar {
+    @include m.button(v.$white, v.$color-third, false);
+    width: fit-content;
+  }
+  &__textarea {
+    @include m.button(v.$color-main, v.$white, true);
+  }
+  &__textRandom {
+    @include m.button(v.$white, v.$gray-300, true);
+    font-size: 80%;
+  }
+  &__text {
+    margin: 2rem 0;
+    font-size: 3rem;
+    color: v.$color-main;
+  }
+  &__wrapper {
+    @include m.flex(null, null, column, 1rem);
+  }
+  &__footer {
+    @include m.button(v.$color-main, v.$white, false, false);
+    font-size: 1.1rem;
+  }
+  &__footerArrowIcon {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,155 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+
+.toolbox {
+  @include m.flex(null, null, column, 2rem);
+  padding: 2rem 3rem;
+  background-color: v.$white;
+  grid-area: sidebar;
+  height: 100%;
+  z-index: 1;
+  &__wrapper {
+    @include m.flex(null, null, column, 0.625rem);
+    position: relative;
+    &--no-pointer-events {
+      pointer-events: none;
+    }
+    & #fonts {
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    color: v.$color-third;
+  }
+  &__input {
+    font-size: 0.875rem;
+    overflow: visible;
+    padding: 0.8rem 2rem;
+    border: 1px solid v.$gray-200;
+    appearance: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: v.$border-radius-main;
+    width: 100%;
+    &:focus {
+      outline: 0.125rem solid v.$color-focus;
+    }
+  }
+  &__selectContainer {
+    position: relative;
+    width: fit-content;
+    &::before {
+      content: '\e5cf';
+      font-family: 'Material Symbols Outlined';
+      display: block;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+  &__selectorWrapper {
+    @include m.flex(null, null, null, 1.25rem);
+  }
+
+  &__selector {
+    border-radius: 0.3125rem;
+    padding: 0.25rem;
+    border: 1px solid v.$color-main;
+    box-shadow: 0.25rem 0.25rem 0.25rem v.$gray-200;
+    width: 2.425rem;
+    height: 2.425rem;
+    pointer-events: auto;
+    cursor: pointer;
+    &:focus {
+      outline: 0.125rem solid v.$color-focus;
+    }
+    &--out {
+      background-color: v.$color-box-accent;
+      border: 2px solid v.$color-box-accent;
+      &.selected {
+        background-color: v.$color-main;
+        border: 2px solid v.$color-main;
+      }
+    }
+    &--inside {
+      background-color: v.$white;
+      border: 2px solid v.$color-box-accent;
+
+      &.selected {
+        background-color: v.$white;
+        border: 2px solid v.$color-main;
+      }
+    }
+  }
+  &__selectorCircle {
+    border-radius: v.$border-radius-circle;
+    width: 100%;
+    height: 100%;
+    &--out {
+      background-color: v.$white;
+
+      &.selected {
+        background-color: v.$white;
+      }
+    }
+    &--inside {
+      background-color: v.$color-box-accent;
+      &.selected {
+        background-color: v.$color-main;
+      }
+    }
+  }
+
+  &__icon {
+    transition: color 0.5s ease;
+    font-size: 2.1rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: v.$border-radius-circle;
+    pointer-events: auto;
+    &:focus {
+      outline: 0.125rem solid v.$color-focus;
+    }
+  }
+  &__iconWrapper {
+    pointer-events: auto;
+    width: fit-content;
+  }
+  &__icon--color {
+    transition: font-size 0.5s ease;
+  }
+  // hacer visible el icono cuando sea blanco
+  &__borderIcon path:nth-child(1) {
+    stroke: v.$gray-300;
+    stroke-width: 7.5;
+  }
+  &--boxShadow {
+    box-shadow: 0.25rem 0.25rem 0.25rem v.$gray-200;
+    stroke-width: 100%;
+  }
+}
+
+.slider {
+  @include m.flex(null, null, column);
+  border-radius: v.$border-radius-main;
+  background: v.$white;
+  padding: 0.35rem 0;
+
+  &__input {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    &:focus {
+      outline: 0.125rem solid v.$color-focus;
+    }
+  }
+}

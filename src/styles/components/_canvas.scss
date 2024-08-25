@@ -1,0 +1,29 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+.canvasWrapper {
+  width: 100%;
+  @include m.flex(center, center, column, v.$margin-components 0);
+  grid-area: body;
+}
+
+.canvasContainer {
+  max-width: 55rem;
+  width: calc(55rem);
+  box-shadow: 0.0625rem 0.0625rem 1rem v.$gray-200,
+    0.5rem 0.5rem 1rem v.$gray-200;
+  border-radius: v.$border-radius-main;
+  overflow: hidden;
+  margin: 6rem 0;
+  min-height: 30%;
+  z-index: 0;
+}
+
+.canvas {
+  width: 100%;
+  &--visible {
+    display: block;
+  }
+  &--hidden {
+    display: none;
+  }
+}

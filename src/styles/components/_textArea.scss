@@ -1,0 +1,58 @@
+@use '../base/variables' as v;
+@use '../helpers/mixins.scss' as m;
+
+.textEditor {
+  &__textarea {
+    border: 0.0625rem solid v.$gray-200;
+    cursor: text;
+    resize: none;
+    width: 100%;
+    font-size: 1.1rem;
+    border: 0;
+    height: 14rem;
+    overflow-x: hidden;
+    margin: 0.5rem 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    /* Estilos generales del scroll Webkit */
+    &::-webkit-scrollbar {
+      width: 0.85rem;
+      overflow: hidden;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: v.$gray-200;
+      min-height: 25px; 
+      border-radius: 0.375rem;
+    }
+  }
+  &__iconGroup {
+    @include m.flex(null, null, null, 0.7rem);
+  }
+ 
+  &__icon {
+    background-color: transparent;
+    &> svg{
+      font-size: 1.8rem;
+      color: v.$gray-300;
+      cursor: pointer;
+      &:hover {
+        color: v.$color-third;
+      }
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    background-color: v.$white;
+    padding: 1.1rem 1.4rem;
+    border-radius: v.$border-radius-main;
+    outline: 0.1875rem solid v.$gray-200;
+    &:focus-within {
+      outline: 0.1875rem solid v.$color-focus;
+      box-shadow: none;
+    }
+  }
+}

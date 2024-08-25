@@ -1,0 +1,37 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+
+/*Custom react-colorful*/
+.pickerColor {
+  @include m.flex(null, null, column);
+  position: relative;
+  &__container {
+    position: absolute;
+    top: 5rem;
+    z-index: 3;
+    left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: v.$white;
+    border: 2px solid v.$gray-200;
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+  &__input {
+    display: block;
+    box-sizing: border-box;
+    width: 90px;
+    margin: 1.25rem auto 0;
+    padding: 6px;
+    border: 1px solid v.$gray-200;
+    border-radius: 0.25rem;
+    background: v.$gray-100;
+    outline: none;
+    font: inherit;
+    text-transform: uppercase;
+    text-align: center;
+    :focus {
+      border-color: v.$color-focus;
+    }
+  }
+}

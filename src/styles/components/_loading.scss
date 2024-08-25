@@ -1,0 +1,45 @@
+@use '../base/variables' as v;
+@use '../helpers/mixins.scss' as m;
+.loading {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  &::before {
+    content: '';
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid v.$color-main;
+    animation: prixClipFix 1.3s linear infinite;
+  }
+  &__container {
+    @include m.flex(center, center);
+    height: 100vh;
+  }
+  &__element {
+    font-size: 4.5rem;
+    color: v.$color-main;
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}

@@ -1,0 +1,535 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+
+/*====== Sections ======*/
+.sections {
+  &--blur::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.203);
+  }
+  &__frontPageContainer {
+    background-image: url(v.$background-frontepage);
+    background-size: cover;
+    width: 100%;
+  }
+  &__quickStartContainer {
+    background-color: v.$white;
+  }
+  &__exampleGalleryContainer {
+    background-color: v.$color-third;
+  }
+  &__faqsContainer {
+    background-color: v.$color-main-light;
+  }
+  &__footerContainer {
+    background-color: v.$color-third;
+  }
+}
+.frontPageContainer {
+  &__header {
+    @include m.flex(center);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 101%;
+      background-size: cover;
+      background-image: url(v.$background-frontepage);
+      transform: scaleY(-1);
+      z-index: -1;
+      transition: background 0.5s ease;
+    }
+
+    &--scrolled::before {
+      background: rgba(255, 255, 255, 85%);
+    }
+  }
+}
+
+/*====== Logo ======*/
+.uiLogo {
+  &__logo {
+    @include m.flex(null, center, null, 0.5rem);
+  }
+  &__logoIcon {
+    width: 3.5rem;
+    fill: v.$color-main;
+    overflow: visible;
+    &--header {
+      width: 3.8rem;
+    }
+    &--footer {
+      width: 2.8125rem;
+      fill: v.$white;
+    }
+  }
+  &__logoName {
+    color: v.$color-main;
+    font-weight: 700;
+    font-size: 1.5rem;
+    &:first-letter {
+      font-size: 130%;
+    }
+    &--header {
+      font-size: 1.55rem;
+    }
+    &--footer {
+      color: v.$white;
+      font-size: 1.25rem;
+    }
+  }
+}
+/*====== Header ======*/
+.header {
+  @include m.flex(center);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  &--scrolled::before {
+    background: v.$white;
+  }
+
+  &__container {
+    max-width: v.$max-width-second;
+    margin: 0 0 0 12.5rem;
+    width: 100%;
+    @include m.flex(space-between, center);
+  }
+  &__nav {
+    &--portrait {
+      background-color: v.$white;
+      height: 100%;
+    }
+  }
+  &__navMenu {
+    cursor: pointer;
+    font-size: 3.5rem;
+    background: transparent;
+    color: v.$color-main;
+  }
+  &__ul {
+    @include m.flex(null, center, row, 1rem);
+    &--portrait {
+      margin: 3rem 0 0 0;
+      @include m.flex(space-around, start, column);
+    }
+  }
+  &__li {
+    list-style-type: none;
+    padding: 1.5rem 0;
+  }
+  &__link {
+    color: v.$gray-500;
+    text-decoration: none;
+    font-size: 1rem;
+    &--portrait {
+      font-size: 2rem;
+      color: v.$color-main;
+    }
+    &--notUnderlined {
+      text-decoration: none;
+    }
+
+    &:hover {
+      color: v.$color-main;
+      text-decoration: underline;
+      text-underline-offset: 0.3125rem;
+    }
+  }
+}
+
+/*====== FrontPage ======*/
+.frontPage {
+  @include m.flex(center);
+
+  &__container {
+    max-width: v.$max-width-second;
+    width: 100%;
+    margin: 2.25rem 0 4.5rem 12.5rem;
+  }
+  &__content {
+    @include m.flex(null, center);
+    position: relative;
+  }
+  &__info {
+    @include m.flex(center, flex-start, column, 1.5rem);
+    font-weight: 400;
+  }
+  &__title {
+    font-size: 4.3rem;
+    color: v.$gray-700;
+    line-height: 1.2;
+  }
+  &__keyword {
+    font-size: 4.7rem;
+    @include m.flex();
+    color: v.$color-main;
+  }
+  &__text {
+    color: v.$gray-500;
+    font-size: 1.55rem;
+    max-width: 35rem;
+    font-weight: 500;
+    line-height: v.$text-line-height;
+  }
+  &__image {
+    width: calc(100% - 25vw);
+  }
+  &__designImageLayer {
+    position: absolute;
+    width: calc(24vw + 24rem);
+    top: 0;
+    right: 0;
+    height: auto;
+  }
+
+  &__containerLayer {
+    margin: 3.5rem 0 3.5rem calc(4vw + 3%);
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  &__windowsImageLayer {
+    position: relative;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0.625rem 2.5rem 0 v.$color-box-accent;
+    border-radius: v.$border-radius-main;
+    width: calc(20vw + 20rem);
+  }
+  &__videoLayer {
+    border: 3px solid v.$gray-200;
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 90%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1.05, 1.2);
+    border-radius: 0.625rem;
+    margin: 0 10%;
+  }
+}
+
+.keyPoints {
+  color: v.$color-second;
+  &__wrapper {
+    @include m.flex(null, center, null, 0.75rem);
+    line-height: 2;
+  }
+  &__icon {
+    font-size: 130%;
+  }
+  &__text {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+}
+
+/*====== Quick Start ======*/
+.quickStartContainer {
+  @include m.flex(center);
+  &__quickStart {
+    max-width: v.$max-width-main;
+    width: 100%;
+    margin: 10rem 0;
+  }
+}
+
+.quickStart {
+  &__title {
+    color: v.$color-main;
+    font-size: v.$section-title;
+    text-align: center;
+  }
+  &__steps {
+    @include m.flex(null, null, column, 7.5rem);
+  }
+  &__step {
+    @include m.flex(space-between, center, null, 5rem);
+    &--reverse {
+      @include m.flex(space-between, center, row-reverse, 5rem);
+    }
+  }
+  &__img {
+    box-shadow: 0.5rem 0.5rem 1rem 0px v.$color-box-accent;
+    border-radius: v.$section-title;
+    width: calc(17% + 10vw);
+  }
+  &__stepContent {
+    @include m.flex(null, null, row, 1rem);
+  }
+  &__icon {
+    color: v.$color-second;
+    overflow: visible;
+    font-size: 3.1rem;
+  }
+  &__stepTitle {
+    color: v.$color-second;
+    font-size: 1.875rem;
+    line-height: v.$text-line-height;
+  }
+  &__text {
+    color: v.$gray-500;
+    font-size: 1.25rem;
+    line-height: v.$text-line-height;
+  }
+}
+
+/*====== Dropzone Container ======*/
+.dropzoneContainer {
+  @include m.flex(center);
+
+  &__dropzoneElement {
+    max-width: v.$max-width-second;
+    margin: 0 0 10rem;
+    width: 100%;
+  }
+}
+
+.dropzoneElement {
+  @include m.flex(null, space-between, column, 4.5rem);
+  &__article {
+    @include m.flex(null, center, column, 1.25rem);
+  }
+  &__title {
+    color: v.$color-main;
+    font-size: v.$section-title;
+  }
+
+  &__text {
+    font-size: v.$section-text;
+    color: v.$gray-700;
+    line-height: 1.5;
+    text-align: center;
+  }
+  &__wrapper {
+    @include m.flex(space-evenly, center, row);
+    margin: 0 0 0 12.5rem;
+  }
+  &__compareImageContainer {
+    max-width: 20.625rem;
+    @include m.flex(null, center, column, 1rem);
+  }
+  &__compareImage {
+    border-radius: v.$border-radius-main;
+    box-shadow: 0.25rem 0.25rem 1rem v.$color-box-accent;
+    overflow: hidden;
+    width: 23.625rem;
+    height: 23.625rem;
+  }
+  &__compareImageText {
+    color: v.$gray-700;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  &__arrowIcon {
+    font-size: 7.5rem;
+    color: v.$color-second;
+  }
+}
+
+/*====== Example Gallery ======*/
+.exampleGalleryContainer {
+  @include m.flex(center);
+
+  &__exampleGallery {
+    max-width: v.$max-width-main;
+    margin: 10rem 0;
+    width: 100%;
+  }
+}
+
+.exampleGallery {
+  @include m.flex(null, center, column, 4.5rem);
+  &__article {
+    @include m.flex(null, center, column, 1.25rem);
+  }
+  &__title {
+    color: v.$white;
+    font-size: v.$section-title;
+  }
+  &__text {
+    color: v.$gray-200;
+    font-size: v.$section-text;
+    line-height: 1.5;
+    text-align: center;
+  }
+  &__grid {
+    @include m.grid(4, 12.25rem, null, 1.25rem);
+  }
+  &__item {
+    text-align: center;
+    aspect-ratio: 1 / 1;
+  }
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: v.$border-radius-main;
+  }
+}
+
+/*====== Faqs ======*/
+.faqsContainer {
+  @include m.flex(center);
+  &__faqs {
+    @include m.flex(center, null, column, 4.5rem);
+    max-width: v.$max-width-main;
+    margin: 10rem 0;
+    width: 100%;
+  }
+}
+
+.faqs {
+  &__article {
+    @include m.flex(null, center, column, 1rem);
+  }
+  &__title {
+    color: v.$color-main;
+    font-size: v.$section-title;
+    font-weight: 700;
+  }
+  &__text {
+    font-size: v.$section-text;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+  }
+  &__group {
+    @include m.flex(null, null, column, 1rem);
+  }
+  &__details {
+    border: 0.155rem solid v.$color-box-accent-second;
+    border-radius: v.$border-radius-main;
+    overflow: hidden;
+    background-color: v.$white;
+    & .material-symbols-outlined {
+      transform: rotate(0);
+      transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67) 0s;
+      font-size: 2.125rem;
+      user-select: none;
+      color: v.$color-main;
+    }
+    &[open] .material-symbols-outlined {
+      transform: rotate(180deg);
+      font-size: 2.125rem;
+      user-select: none;
+    }
+  }
+
+  &__details[open] &__summary {
+    padding: 1.5rem;
+    background-color: v.$color-box-accent-second;
+    color: v.$color-second;
+    font-weight: 700;
+  }
+  &__summary {
+    @include m.flex(space-between, center);
+    padding: 1.5rem;
+    transition: color 0.55s ease, background 0.55s ease;
+    width: 100%;
+    color: v.$gray-500;
+    background-color: v.$white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    text-align: left;
+
+    &:not([open]) {
+      margin: 0;
+    }
+  }
+
+  &__detailsContent {
+    @include m.flex(null);
+    font-size: v.$section-text;
+    line-height: 1.5;
+    color: v.$gray-500;
+    padding: 24px;
+  }
+}
+
+/*====== Footer ======*/
+.footerContainer {
+  @include m.flex(center);
+  &__footer {
+    margin: 0 6.25rem;
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+}
+.footer {
+  @include m.flex(null, null, column, 2.25rem);
+  &__content {
+    @include m.flex(space-between, center);
+  }
+
+  &__logoIcon {
+    width: 2.8125rem;
+    &--color {
+      fill: v.$white;
+    }
+  }
+
+  &__logoName {
+    color: v.$white;
+    font-weight: 700;
+    &:first-letter {
+      font-size: 130%;
+    }
+  }
+}
+.socialMedia {
+  &__socialCopyManager {
+    @include m.flex(space-between, center);
+  }
+  &__socialNetworks {
+    @include m.flex();
+    &--footer {
+      @include m.flex(null, null, null, 0.75rem);
+    }
+  }
+  &__socialIcon {
+    @include m.flex(center, center);
+    background-color: v.$color-main;
+    border-radius: v.$border-radius-circle;
+    margin: 0 0.4rem;
+    font-size: 2rem;
+    margin: 0 3% 0 0;
+    padding: 0.85rem;
+    &--frontePage {
+      box-shadow: 0 4px 8px v.$color-box-accent;
+      color: v.$white;
+    }
+    &--footer {
+      color: v.$color-third;
+      background-color: v.$white;
+    }
+  }
+  &__copyright {
+    font-size: 0.875rem;
+    color: v.$white;
+    padding: 0 0 0 2rem;
+  }
+}

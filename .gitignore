@@ -2,14 +2,32 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+
+
+# VSCode
+.vscode/
+
+# package lock
+package-lock.json
+
+
+# Sass
+src/**/*.css
+src/**/*.css.map
 
 # testing
 /coverage
 
+# docs
+/docs
+
 # production
 /build
+/dist
+
+# firebase
+firebase/
+firebase-debug.log
 
 # misc
 .DS_Store

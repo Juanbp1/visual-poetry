@@ -1,0 +1,116 @@
+@use '../base/variables' as v;
+
+@mixin flex($justify: null, $align: null, $direction: null, $gap: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin grid($columns: null, $min: null, $grid-column: null, $gap: null) {
+  display: grid;
+  @if $columns and $min {
+    grid-template-columns: repeat($columns, minmax($min, 1fr));
+  }
+  @if $columns and not($min) {
+    grid-template-columns: repeat($columns, 1fr);
+  }
+  @if $grid-column {
+    grid-column: #{$grid-column};
+  }
+  gap: $gap;
+}
+
+@mixin button(
+  $background-color,
+  $text-color,
+  $border: false,
+  $gradient: false
+) {
+  border-radius: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.7375rem 1.675rem;
+  cursor: pointer;
+  background: $background-color;
+  color: $text-color;
+  outline: none;
+  transition: all 0.65s ease;
+  text-decoration: none;
+  font-family: inherit;
+
+  // Estilo para botones con borde
+  @if $border {
+    border: 0.1875rem solid $text-color;
+  } @else {
+    // Estilo para botones sin borde
+    border: 0.1875rem solid $background-color;
+
+    &:hover {
+      @if not $gradient {
+        background-color: lighten($background-color, 10%);
+      }
+    }
+
+    &:active {
+      @if not $gradient {
+        background-color: darken($background-color, 10%);
+      }
+    }
+  }
+
+  // Estilo para botones con icono
+  &.button__withIcon {
+    @include flex(center, center, null, 0.55rem);
+    & > svg {
+      font-size: 2rem;
+      &path {
+        stroke: $text-color;
+      }
+    }
+    &:hover {
+      & > svg > path {
+        stroke: $text-color;
+      }
+    }
+  }
+
+  // Estilo para botones circulares
+  &.button__circle {
+    padding: 1rem;
+    border-radius: v.$border-radius-circle;
+  }
+  &:hover {
+    color: $text-color;
+    transform: scale(0.8);
+  }
+
+  &:active {
+    transform: scale(1.15);
+  }
+  @media screen and (max-width: 430px) {
+    &:hover {
+      color: $text-color;
+      transform: none;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+@mixin fontFace($family, $nameWeight, $weight, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('../assets/fonts/#{$family}/#{$family}-#{$nameWeight}.woff2')
+        format('woff2'),
+      url('../assets/fonts/#{$family}/#{$family}-#{$nameWeight}.woff')
+        format('woff'),
+      url('../assets/fonts/#{$family}/#{$family}-#{$nameWeight}.ttf')
+        format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

@@ -1,0 +1,49 @@
+@use '../helpers/mixins.scss' as m;
+@use '../helpers/functions.scss' as f;
+@use '../base/variables' as v;
+
+.dropzone {
+  @include m.flex(space-evenly, center, column);
+  color: v.$color-main;
+  background-color: transparent;
+  border-radius: v.$border-radius-main;
+  box-shadow: 0.5rem 0.5rem 1rem 0 v.$color-box-accent;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  padding: 4.5rem 2.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  user-select: none;
+  @include m.flex(null, null, column, 3rem);
+
+  &__container {
+    @include m.flex(null, center, column);
+    position: relative;
+    z-index: 1;
+    transition: background 5.5s ease;
+  }
+
+  &__Wrapper {
+    position: relative;
+    max-width: 40rem;
+    background-image: url(v.$background-dropzone);
+    background-size: cover;
+    border-radius: 2.5rem;
+  }
+  &__messageWrapper {
+    @include m.flex(null, null, column, 3rem);
+  }
+
+  &__message {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: v.$text-line-height;
+  }
+
+  &__errorMessage {
+    @include m.flex(center);
+    color: v.$color-error;
+    font-size: 2rem;
+    margin: 0 0 4rem 0;
+  }
+}

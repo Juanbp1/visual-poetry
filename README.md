@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# 🎨 Visual Poetry
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Estado del Proyecto](https://img.shields.io/badge/Estado-Activo-brightgreen)
+![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-blue)
+![Versión](https://img.shields.io/badge/Versión-1.0.0-blue)
 
-## Available Scripts
+¡Bienvenido a **Visual Poetry**! 🎉 Desata tu creatividad convirtiendo imágenes en arte textual único. Sube tu imagen, escribe tu mensaje y personaliza el estilo para crear algo especial.
 
-In the project directory, you can run:
+## 🚀 Descripción
 
-### `npm start`
+**Visual Poetry** es una herramienta que convierte tus imágenes en lienzos para arte textual. Personaliza tu creación con diferentes colores y estilos, y exporta el resultado en varios formatos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📦 Instalación
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Para instalar el proyecto, sigue estos pasos:
 
-### `npm test`
+1. **Clona el repositorio:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone https://github.com/usuario/visual-poetry.git
+   ```
 
-### `npm run build`
+2. **Navega al directorio del proyecto:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd visual-poetry
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Instala las dependencias:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+4. **Inicia la aplicación:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Uso
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Selecciona una Imagen:** Elige una imagen de la galería o sube una desde tu dispositivo para comenzar el proceso de diseño.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Edita tu Imagen:** Usa la herramienta de diseño para modificar la imagen con selectores de color y texto.
 
-## Learn More
+3. **Exporta tu Diseño:** Exporta tu imagen en diferentes formatos como PNG, JPG o WEBP.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 💻 Tecnologías
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![React Badge](https://img.shields.io/badge/React-18.3.1-informational?style=flat&logo=react&color=61DAFB)
+![Sass Badge](https://img.shields.io/badge/Sass-1.68.0-informational?style=flat&logo=sass&color=CC6699)
+![OpencVjs Badge](https://img.shields.io/badge/OpencvJs-4.7.0-informational?style=flat&logo=opencv&color=5C3EE8)
+![Jest Badge](https://img.shields.io/badge/Jest-29.7.0-informational?style=flat&logo=jest&color=C21325)
+![React router Badge](https://img.shields.io/badge/React%20Router-^6.17.0-informational?style=flat&logo=react-router&color=C21325)
+![JSDoc](https://img.shields.io/badge/JSDoc-^4.0.3-brightgreen)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🔧 Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Iniciar la aplicación:** `npm start`
+- **Construir para producción:** `npm run build`
+- **Ejecutar pruebas:** `npm test`
+- **Actualizar snapshot:** `npm run test-u`
+- **Cobertura de pruebas:** `npm run test-c`
+- **Compilación de Sass a CSS:** `npm run sass`
+- **Generar documentacion:** `npm run docs`
 
-### Making a Progressive Web App
+## 📝 Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo [LICENSE](LICENSE.txt) para más detalles.
 
-### Advanced Configuration
+## 🌟 Inicio Rápido
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Selecciona una Imagen
 
-### Deployment
+Elige una imagen de la galería o bien sube una imagen desde tu dispositivo, para empezar el proceso de diseño.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Edita tu Imagen
 
-### `npm run build` fails to minify
+Usa la herramienta de diseño personalízalo con la fuente, colores y estilos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Exporta tu Diseño
+
+Exporta tu imagen en diferentes formatos como PNG, JPG o WEBP.
+
+## ❓ Preguntas Frecuentes
+
+**¿Qué es Visual Poetry?**
+
+Visual Poetry es una herramienta online que permite subir una imagen, convertirla en un lienzo y luego pintar texto sobre ella con la forma de la figura principal de la imagen. Puedes personalizar el texto y exportar el resultado final como una nueva imagen.
+
+**¿Qué tipo de imágenes puedo usar?**
+
+Puedes usar cualquier imagen en formato JPG, PNG o WEBP. La app funciona mejor con imágenes que tengan un buen contraste entre el fondo y la figura principal.
+
+**¿Qué navegadores web son compatibles con esta Web?**
+
+Esta Web App es compatible con los navegadores web modernos, como Chrome, Opera y Edge.
+
+**¿Cuánto tiempo tarda en procesarse una imagen?**
+
+El tiempo de procesamiento depende del tamaño y la complejidad de la imagen. En general, las imágenes se procesan en cuestión de segundos.
+
+## 🏆 ¡Comienza a crear!
+
+¡Descubre todo lo que Visual Poetry tiene para ofrecer y convierte tus imágenes en arte textual hoy mismo!
+

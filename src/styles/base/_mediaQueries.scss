@@ -1,0 +1,517 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+
+/*====== Media Queries Home ======*/
+@media screen and (max-width: 1609px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1456px) {
+  html {
+    font-size: 80%;
+  }
+  .header {
+    &__container {
+      margin: 0 3.125rem;
+    }
+  }
+  .frontPage {
+    &__container {
+      margin: 2.25rem 3.125rem 6.5rem;
+    }
+    &__title {
+      font-size: 3.9rem;
+    }
+    &__image {
+      width: calc(100% - 35vw);
+    }
+  }
+  .quickStartContainer {
+    &__quickStart {
+      margin: v.$margin-container-landscape;
+    }
+  }
+  .dropzoneContainer {
+    &__dropzoneElement {
+      margin: v.$margin-container-landscape;
+    }
+  }
+  .dropzoneElement {
+    &__wrapper {
+      margin: 0;
+    }
+  }
+  .exampleGalleryContainer {
+    &__exampleGallery {
+      margin: v.$margin-container-landscape;
+    }
+  }
+  .faqsContainer {
+    &__faqs {
+      margin: v.$margin-container-landscape;
+    }
+  }
+  .footerContainer {
+    &__footer {
+      margin: 0 3.125rem 0;
+    }
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1180px) {
+  .sections {
+    &__frontPageContainer {
+      height: 100vh;
+    }
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1025px) {
+  .frontPageContainer {
+    background-size: cover;
+  }
+  .frontPage {
+    &__title {
+      font-size: 2.7rem;
+    }
+    &__keyword {
+      font-size: 3.7rem;
+    }
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 960px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+  html {
+    font-size: 80%;
+  }
+  .frontPageContainer {
+    background-image: url(v.$background-frontpage-portrait);
+    &__header {
+      @include m.flex(space-around);
+      padding: 0;
+      z-index: 2;
+      &::before {
+        background-image: url(v.$background-frontpage-portrait);
+      }
+      &--scrolled::before {
+        background: v.$white;
+      }
+    }
+  }
+  .header {
+    &__container {
+      margin: 1rem 6.25rem;
+      width: 100%;
+    }
+  }
+  .frontPage {
+    &__container {
+      margin: 2.25rem 6.25rem 4.5rem;
+    }
+    &__content {
+      @include m.flex(null, null, column);
+    }
+    &__info {
+      @include m.flex(center, center);
+      z-index: 1;
+    }
+    &__title {
+      font-size: 3.5rem;
+      text-align: center;
+    }
+    &__keyword {
+      display: block;
+      font-size: 3.7rem;
+    }
+    &__text {
+      max-width: 85%;
+      text-align: left;
+    }
+    &__image {
+      width: calc(50vh + 20%);
+    }
+    &__designImageLayer {
+      position: absolute;
+      top: calc(20% + 17rem);
+      left: -4vw;
+      width: calc(30vw + 25rem);
+    }
+    &__windowsImageLayer {
+      width: calc(23vw + 23rem);
+    }
+    &__containerLayer {
+      position: relative;
+      margin: 2.5rem 0;
+    }
+  }
+  .keyPoints {
+    @include m.flex(null, center, column);
+    z-index: 1;
+    position: relative;
+  }
+
+  .quickStartContainer {
+    &__quickStart {
+      margin: v.$margin-container-portrait-1024;
+    }
+  }
+  .quickStart {
+    &__step {
+      @include m.flex(null, null, column);
+      &--reverse {
+        @include m.flex(null, null, column);
+      }
+    }
+    &__stepContent {
+      order: 1;
+    }
+    &__img {
+      order: 2;
+      width: 75%;
+      height: auto;
+      max-width: 25.75rem;
+    }
+  }
+  .exampleGalleryContainer {
+    &__exampleGallery {
+      margin: v.$margin-container-portrait-1024;
+    }
+  }
+  .exampleGallery {
+    &__title {
+      text-align: center;
+    }
+  }
+  .dropzoneContainer {
+    &__dropzoneElement {
+      margin: v.$margin-container-portrait-1024;
+    }
+  }
+  .dropzoneElement {
+    &__wrapper {
+      margin: 0;
+    }
+    &__title {
+      text-align: center;
+    }
+  }
+  .faqsContainer {
+    &__faqs {
+      margin: v.$margin-container-portrait-1024;
+    }
+  }
+  .faqs {
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 900px) {
+  .dropzoneElement {
+    &__wrapper {
+      @include m.flex(null, center, column, 1rem);
+    }
+    &__arrowIcon {
+      transform: rotate(90deg);
+    }
+  }
+  .sidebar {
+    &__imageGallery {
+      width: 50vw;
+    }
+  }
+  .exampleGallery {
+    &__grid {
+      @include m.grid(3, 10.25rem);
+    }
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 700px) {
+  .header {
+    &__container {
+      margin: 0 1.88rem;
+    }
+  }
+  .frontPage {
+    &__container {
+      margin: v.$margin-container-portrait-700;
+    }
+    &__text {
+      max-width: 90%;
+    }
+  }
+  .frontPageContainer {
+    &__header {
+      &::before {
+        background-size: auto;
+      }
+    }
+  }
+  .quickStartContainer {
+    &__quickStart {
+      margin: v.$margin-container-portrait-700;
+    }
+  }
+  .dropzoneContainer {
+    &__dropzoneElement {
+      margin: v.$margin-container-portrait-700;
+    }
+  }
+  .sidebar {
+    &__imageGallery {
+      width: 96vw;
+    }
+  }
+  .exampleGalleryContainer {
+    &__exampleGallery {
+      margin: v.$margin-container-portrait-700;
+    }
+  }
+  .exampleGallery {
+    &__grid {
+      @include m.grid(2, 10.25rem);
+    }
+    &__item {
+      &--button {
+        text-align: center;
+        grid-column: 1 / -1;
+      }
+    }
+  }
+  .faqsContainer {
+    &__faqs {
+      margin: v.$margin-container-portrait-700;
+    }
+  }
+  .footerContainer {
+    &__footer {
+      margin: 0 1.88rem;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 420px) {
+  html {
+    font-size: 65%;
+  }
+  .frontPage {
+    &__title {
+      font-size: 2.45rem;
+    }
+    &__content {
+      @include m.flex(null, null, column, 1rem);
+    }
+    &__container {
+      margin: 0.82rem 1.88rem;
+    }
+    &__info {
+      @include m.flex(null, null, column, 1rem);
+    }
+    &__designImageLayer {
+      top: calc(20% + 18rem);
+      left: 2vw;
+      width: calc(22vw + 21rem);
+    }
+  }
+
+  .dropzoneElement {
+    &__compareImage {
+      width: 90%;
+      height: auto;
+    }
+    &__arrowIcon {
+      font-size: 5.5rem;
+    }
+  }
+  .sidebar {
+    width: 100%;
+  }
+
+  .exampleGallery {
+    &__grid {
+      @include m.grid(1, 10.25rem);
+    }
+  }
+  .button {
+    &__exampleGallery {
+      width: 100%;
+    }
+  }
+  .footer {
+    &__socialCopyManager {
+      @include m.flex(null, flex-start, column, 1rem);
+    }
+  }
+}
+
+/*====== AppViewer ======*/
+@media screen and (orientation: portrait) {
+  .textEditor__wrapper {
+    width: 100%;
+  }
+  .canvasContainer {
+    max-width: calc(100% - 2rem);
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 1000px) {
+  .AppWrapper {
+    grid-template-areas:
+      'head head head head'
+      'body body body body'
+      'sidebar sidebar sidebar sidebar';
+  }
+  .appViewerContainer {
+    &__header {
+      z-index: 1;
+    }
+  }
+  .canvasWrapper {
+    height: 100%;
+    position: sticky;
+    top: 0;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: v.$gray-100;
+      background-image: v.$background-circle;
+      background-size: 5rem 5rem;
+      background-position: 0 0, 2.5rem 2.5rem;
+    }
+  }
+  .canvasContainer {
+    max-width: calc(60% - 2rem);
+    z-index: 3;
+  }
+  .toolbox {
+    box-shadow: 1px 1px 3px 0px v.$gray-200;
+  }
+
+  .slider__input {
+    width: 100%;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 430px) {
+  .frontPage {
+    &__containerLayer {
+      &--mobile {
+        width: 70%;
+      }
+    }
+    &__windowsImageLayer {
+      &--mobile {
+        border-radius: 4.25rem;
+        width: calc(100%);
+        background-color: v.$color-box-accent;
+      }
+    }
+    &__image {
+      &--mobile {
+        position: absolute;
+        width: 87%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+/*====== Media Queries Not Found 404 ======*/
+@media screen and (orientation: landscape) and (max-width: 1300px) {
+  .notFoundContainer {
+    @include m.flex(space-around);
+    &__header {
+      position: initial;
+    }
+  }
+  .notFound {
+    @include m.flex(center);
+    &__content {
+      @include m.flex(null, null, column);
+      padding: 0 6.5rem;
+    }
+    &__info {
+      @include m.flex(null, center);
+      font-size: 95%;
+    }
+    &__text {
+      text-align: center;
+    }
+
+    &__image {
+      width: 37%;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .notFoundContainer {
+    background-image: url(v.$background-notFound-portrait);
+  }
+  .notFound {
+    @include m.flex(center);
+    &__content {
+      @include m.flex(null, null, column);
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 710px) {
+  .notFoundContainer__header > .header__container {
+    margin: 0 5.5rem;
+  }
+
+  .notFound {
+    &__content {
+      padding: 0 5.5rem;
+    }
+    &__info {
+      font-size: 90%;
+    }
+    &__title {
+      font-size: 3em;
+    }
+    &__keyword {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 640px) {
+  .notFoundContainer__header {
+    position: initial;
+  }
+  .notFoundContainer__header > .header__container {
+    margin: 0 2.5rem;
+  }
+
+  .notFound {
+    &__content {
+      padding: 0 2.5rem;
+    }
+    &__image {
+      width: 65%;
+    }
+  }
+}

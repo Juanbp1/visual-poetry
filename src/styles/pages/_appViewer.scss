@@ -1,0 +1,49 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+
+/*====== AppViewer Page ======*/
+.appViewerContainer {
+  &__header {
+    background-color: v.$white;
+    padding: 1.3rem 0;
+    grid-area: head;
+    box-shadow: 0 0.0625rem 0.1875rem v.$gray-200;
+    position: sticky;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    & .header__container {
+      margin: 0 0 0 3rem;
+      max-width: 100%;
+    }
+    & .header__logoIcon {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+    & .header__logoName {
+      font-size: 1.25rem;
+    }
+  }
+  &__modal {
+    @include m.flex(null, null, column, 2rem);
+    text-align: center;
+    border-radius: v.$border-radius-main;
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    background-color: v.$white;
+    margin: 2rem;
+    padding: 1rem;
+    box-shadow: 0.0625rem 0.0625rem 0.25rem 0 v.$gray-200;
+  }
+}
+.modal {
+  &__buttonsWrapper {
+    @include m.flex(null, null, null, 0.7rem);
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+}

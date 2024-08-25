@@ -1,0 +1,36 @@
+@use '../base/variables' as v;
+
+//Crear un gradiente lineal repetitivo utilizando el ángulo especificado 
+// y los puntos de color.
+@function generate-repeating-gradient($angle) {
+  $gradient: repeating-linear-gradient(
+    $angle,
+    v.$white,
+    v.$white 1.375rem,
+    transparent 1.375rem,
+    transparent 1.9375rem,
+    v.$white 1.9375rem
+  );
+  @return $gradient;
+}
+
+// Generar un conjunto de gradientes lineales repetitivos con ángulos
+// incrementales para crear un fondo multicapa
+@function generate-background-image() {
+  $angle-increment: 90deg;
+  $angle: 32deg;
+  $gradient-steps: 4;
+  $backgrounds: ();
+  
+  @for $i from 1 through $gradient-steps {
+    $comma: #{', '};
+    $gradient: generate-repeating-gradient($angle);
+    $backgrounds: append($backgrounds, $gradient);
+    $angle: $angle + $angle-increment;
+
+    @if $i < $gradient-steps {
+      $backgrounds: append($backgrounds, $comma);
+    }
+  }
+  @return $backgrounds;
+}

@@ -1,0 +1,57 @@
+@use '../helpers/mixins.scss' as m;
+@use '../base/variables' as v;
+
+/*====== NotFound Page ======*/
+.notFoundContainer__header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  & > .header__container {
+    max-width: 100%;
+    margin: 0 12.5rem;
+  }
+}
+.notFoundContainer {
+  background-image: url(v.$background-notFound);
+  background-size: cover;
+  height: 100vh;
+  @include m.flex(center, null, column);
+}
+.notFound {
+  @include m.flex(center);
+  height: auto;
+  &__container {
+    max-width: v.$max-width-second;
+    width: 100%;
+  }
+  &__content {
+    @include m.flex(null, center);
+    position: relative;
+    padding: 0 12.5rem;
+  }
+  &__info {
+    @include m.flex(center, flex-start, column, 1em);
+    font-weight: 400;
+  }
+  &__title {
+    font-size: 4em;
+    color: v.$gray-700;
+    font-weight: 600;
+  }
+  &__keyword {
+    font-size: 5rem;
+    color: v.$color-main;
+  }
+  &__text {
+    color: v.$gray-500;
+    font-size: 1.35em;
+    font-weight: 500;
+    line-height: v.$text-line-height;
+  }
+
+  &__image {
+    width: calc(100% + 10vw);
+  }
+}
