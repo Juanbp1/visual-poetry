@@ -31,7 +31,6 @@ import MobileEditor from './MobileEditor';
  */
 const CanvasTextEditor = ({ title, id }) => {
   const { state, actions } = useAppContext();
-  const { canvasSize } = state;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const { updateInputDataAction } = actions;
   const { MOBILE, TABLET, LAPTOP } = DEVICE_TYPES;
@@ -53,7 +52,7 @@ const CanvasTextEditor = ({ title, id }) => {
    * @member module:canvasToolbox/CanvasTextEditor
    */
   const generateText = useGenerateTextLoremIpsum();
-  
+
   useEffect(() => {
     const newText = generateText();
     updateInputDataAction(state.inputData + newText);
