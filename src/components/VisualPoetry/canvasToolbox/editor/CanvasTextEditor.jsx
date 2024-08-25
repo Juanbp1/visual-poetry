@@ -31,6 +31,7 @@ import MobileEditor from './MobileEditor';
  */
 const CanvasTextEditor = ({ title, id }) => {
   const { state, actions } = useAppContext();
+  const {canvasSize} = state;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const { updateInputDataAction } = actions;
   const { MOBILE, TABLET, LAPTOP } = DEVICE_TYPES;
@@ -53,9 +54,11 @@ const CanvasTextEditor = ({ title, id }) => {
    */
   const generateText = useGenerateTextLoremIpsum();
 
+  const newText = generateText();
   useEffect(() => {
-    const newText = generateText();
-    updateInputDataAction(state.inputData + newText);
+    if(state.canvasSize){
+        updateInputDataAction(state.inputData + newText);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
