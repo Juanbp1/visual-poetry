@@ -36,7 +36,7 @@
     "test-u": "npm run test -- -u",
     "test-c": "jest --detectOpenHandles --coverage --onlyChanged --verbose=false",
     "eject": "react-scripts eject",
-    "sass": "sass --watch src/styles/main.scss src/styles/main.css",
+    "sass": "sass src/styles/main.scss src/styles/main.css",
     "docs": "jsdoc -c jsdoc.json"
   },
   "eslintConfig": {
