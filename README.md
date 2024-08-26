@@ -8,6 +8,17 @@
 
 ¡Bienvenido a **Visual Poetry**! 🎉 Desata tu creatividad convirtiendo imágenes en arte textual único. Sube tu imagen, escribe tu mensaje y personaliza el estilo para crear algo especial.
 
+## 📖 Tabla de Contenidos
+- [🚀 Descripción](#-descripción)
+- [📦 Instalación](#-instalación)
+- [💻 Uso](#-uso)
+- [🌟 Inicio Rápido](#-inicio-rápido)
+- [🔧 Scripts](#-scripts)
+- [💻 Tecnologías](#-tecnologías)
+- [❓ Preguntas Frecuentes](#preguntas-frecuentes)
+- [📝 Licencia](#-licencia)
+- [🏆 ¡Comienza a crear!](#-comienza-a-crear)
+
 ## 🚀 Descripción
 
 **Visual Poetry** es una herramienta que convierte tus imágenes en lienzos para arte textual. Personaliza tu creación con diferentes colores y estilos, y exporta el resultado en varios formatos.
@@ -19,7 +30,7 @@ Para instalar el proyecto, sigue estos pasos:
 1. **Clona el repositorio:**
 
    ```bash
-   git clone https://github.com/usuario/visual-poetry.git
+   git clone https://github.com/Juanbp1/visual-poetry
    ```
 
 2. **Navega al directorio del proyecto:**
@@ -48,31 +59,6 @@ Para instalar el proyecto, sigue estos pasos:
 
 3. **Exporta tu Diseño:** Exporta tu imagen en diferentes formatos como PNG, JPG o WEBP.
 
-## 💻 Tecnologías
-
-![React Badge](https://img.shields.io/badge/React-18.3.1-informational?style=flat&logo=react&color=61DAFB)
-![Sass Badge](https://img.shields.io/badge/Sass-1.68.0-informational?style=flat&logo=sass&color=CC6699)
-![OpencVjs Badge](https://img.shields.io/badge/OpencvJs-4.7.0-informational?style=flat&logo=opencv&color=5C3EE8)
-![Jest Badge](https://img.shields.io/badge/Jest-29.7.0-informational?style=flat&logo=jest&color=C21325)
-![React router Badge](https://img.shields.io/badge/React%20Router-^6.17.0-informational?style=flat&logo=react-router&color=C21325)
-![JSDoc](https://img.shields.io/badge/JSDoc-^4.0.3-brightgreen)
-
-
-
-## 🔧 Scripts
-
-- **Iniciar la aplicación:** `npm start`
-- **Construir para producción:** `npm run build`
-- **Ejecutar pruebas:** `npm test`
-- **Actualizar snapshot:** `npm run test-u`
-- **Cobertura de pruebas:** `npm run test-c`
-- **Compilación de Sass a CSS:** `npm run sass`
-- **Generar documentacion:** `npm run docs`
-
-## 📝 Licencia
-
-Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo [LICENSE](LICENSE.txt) para más detalles.
-
 ## 🌟 Inicio Rápido
 
 ### Selecciona una Imagen
@@ -86,6 +72,55 @@ Usa la herramienta de diseño personalízalo con la fuente, colores y estilos
 ### Exporta tu Diseño
 
 Exporta tu imagen en diferentes formatos como PNG, JPG o WEBP.
+
+## 🔧 Scripts
+
+- **Iniciar la aplicación:**
+
+   ```bash
+   npm start
+   ```
+
+- **Construir para producción:**
+
+   ```bash
+   npm run build
+   ```
+
+- **Ejecutar pruebas:**
+
+   ```bash
+   npm run test
+   ```
+
+- **Actualizar snapshot:**
+
+   ```bash
+   npm run test-u
+   ```
+- **Cobertura de pruebas:**
+
+   ```bash
+   npm run test-c
+   ```
+- **Compilación de Sass a CSS:**
+
+   ```bash
+   npm run sass
+   ```
+- **Generar documentacion:**
+
+   ```bash
+   npm run docs
+   ```
+## 💻 Tecnologías
+
+![React Badge](https://img.shields.io/badge/React-18.3.1-informational?style=flat&logo=react&color=61DAFB)
+![Sass Badge](https://img.shields.io/badge/Sass-1.68.0-informational?style=flat&logo=sass&color=CC6699)
+![OpencVjs Badge](https://img.shields.io/badge/OpencvJs-4.7.0-informational?style=flat&logo=opencv&color=5C3EE8)
+![Jest Badge](https://img.shields.io/badge/Jest-29.7.0-informational?style=flat&logo=jest&color=C21325)
+![React router Badge](https://img.shields.io/badge/React%20Router-^6.17.0-informational?style=flat&logo=react-router&color=C21325)
+![JSDoc](https://img.shields.io/badge/JSDoc-^4.0.3-brightgreen)
 
 ## ❓ Preguntas Frecuentes
 
@@ -104,6 +139,10 @@ Esta Web App es compatible con los navegadores web modernos, como Chrome, Opera 
 **¿Cuánto tiempo tarda en procesarse una imagen?**
 
 El tiempo de procesamiento depende del tamaño y la complejidad de la imagen. En general, las imágenes se procesan en cuestión de segundos.
+
+## 📝 Licencia
+
+Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo [LICENSE](LICENSE.txt) para más detalles.
 
 ## 🏆 ¡Comienza a crear!
 
