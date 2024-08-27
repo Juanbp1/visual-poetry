@@ -11,11 +11,11 @@
 ## 📖 Tabla de Contenidos
 - [🚀 Descripción](#-descripción)
 - [📦 Instalación](#-instalación)
-- [💻 Uso](#-uso)
+- [🛠️ Uso](#-uso)
 - [🌟 Inicio Rápido](#-inicio-rápido)
 - [🔧 Scripts](#-scripts)
 - [💻 Tecnologías](#-tecnologías)
-- [❓ Preguntas Frecuentes](#preguntas-frecuentes)
+- [❓ Preguntas Frecuentes](#-preguntas-frecuentes)
 - [📝 Licencia](#-licencia)
 - [🏆 ¡Comienza a crear!](#-comienza-a-crear)
 
