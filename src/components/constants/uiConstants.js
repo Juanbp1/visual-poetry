@@ -166,3 +166,10 @@ export const MENU = [
   { href: '/#exampleGalleryId', label: 'Galeria de ejemplos' },
   { href: '/#faqsId', label: 'Preguntas frecuentes' },
 ];
+
+/**
+ * Umbral para activar el comportamiento pegajoso en la interfaz de usuario.
+ * @memberof UI_DATA
+ * @type {number}
+ */
+export const STICKY_THRESHOLD = 80;

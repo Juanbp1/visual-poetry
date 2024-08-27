@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import { STICKY_THRESHOLD } from '../components/constants/uiConstants';
 
 /**
  * Hook personalizado para manejar el scroll y la visibilidad del encabezado.
@@ -10,15 +11,15 @@ import { useState, useCallback, useEffect } from 'react';
  * import { useScrollHandler } from '../../hooks'; // Asegúrate de importar desde la ruta correcta
  * import { Logo, Button } from '../common';
  * import { LuMenu } from 'react-icons/lu';
- *  
+ *
  * const SimpleHeader = ({ className, menuItems, useStickyStyles }) => {
  *   const headerRef = useRef();
  *   const { scrolled, headerVisibility } = useScrollHandler(); // Obtiene ambos estados del hook
- * 
+ *
  *   // Determina la clase del encabezado en función del estado de desplazamiento y visibilidad
  *   const scrollHeaderClass = `${className} header ${scrolled && useStickyStyles ? `${className}--scrolled` : ''}`;
  *   const visibilityStyle = headerVisibility ? {} : { display: 'none' };
- * 
+ *
  *   return (
  *     <header classContainer={scrollHeaderClass} ref={headerRef} style={visibilityStyle}>
  *       <div className="header__container">
@@ -36,9 +37,9 @@ import { useState, useCallback, useEffect } from 'react';
  *     </header>
  *   );
  * };
- * 
+ *
  * export default SimpleHeader;
- * 
+ *
  */
 const useScrollHandler = () => {
   const initialPosition = 0;
@@ -46,6 +47,7 @@ const useScrollHandler = () => {
   const [headerVisibility, setHeaderVisibility] = useState(true);
   const [previousScrollPosition, setPreviousScrollPosition] =
     useState(initialPosition);
+  // const STICKY_THRESHOLD = 80;
 
   const handleScroll = useCallback(() => {
     requestAnimationFrame(() => {
@@ -61,7 +63,7 @@ const useScrollHandler = () => {
       if (
         currentPosition > previousScrollPosition &&
         headerVisibility &&
-        currentPosition > 100
+        currentPosition > STICKY_THRESHOLD
       ) {
         setHeaderVisibility(false);
       } else if (
