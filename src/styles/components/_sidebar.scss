@@ -84,7 +84,7 @@
   }
   &__nav {
     @include m.flex(space-between, null, column);
-    height: 96%;
+    height: 90%;
   }
   &--portrait {
     background-color: v.$white;
