@@ -1,8 +1,10 @@
-import React, { forwardRef } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { useSpring, animated } from 'react-spring';
+import { STICKY_THRESHOLD } from '../../constants/uiConstants';
+
 /**
- * Este componente crea una cabecera animada utilizando `react-spring`. La cabecera se mostrará o se ocultará
+ * Este componente crea una header animado utilizando `react-spring`. El header se mostrará o se ocultará
  * en función de la propiedad `headerVisibility` que se le pase.
  *
  * @module animations/AnimatedHeader
@@ -36,12 +38,27 @@ import { useSpring, animated } from 'react-spring';
  */
 const AnimatedHeader = forwardRef(
   ({ headerClassName, children, headerVisibility }, ref) => {
+    const [isSticky, setIsSticky] = useState(false);
+
+    // Detectar el scroll y actualizar el estado
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsSticky(window.scrollY > STICKY_THRESHOLD);
+        console.log(window.scrollY)
+      };
+   
+      window.addEventListener('scroll', handleScroll);
+
+      // Limpiar el event listener al desmontar el componente
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const animationProps = useSpring({
-      opacity: headerVisibility ? 1 : 0,
+      opacity:  headerVisibility ? 1 : 0,
       transform: headerVisibility ? 'translateY(0%)' : 'translateY(-100%)',
       config: {
-        tension: 190,
-        friction: 40,
+        tension: 120,
+        friction: 30,
         mass: 1,
       },
     });
@@ -50,7 +67,11 @@ const AnimatedHeader = forwardRef(
       <animated.header
         className={headerClassName}
         ref={ref}
-        style={animationProps}
+        style={{
+          ...animationProps,
+          // Estilo fijo para cuando el header está en la parte superior
+          ...(!isSticky && { opacity: 1, transform: 'translateY(0%)'})
+        }}
         aria-hidden={!headerVisibility}
       >
         {children}
@@ -58,9 +79,11 @@ const AnimatedHeader = forwardRef(
     );
   }
 );
+
 AnimatedHeader.propTypes = {
   headerClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
   headerVisibility: PropTypes.bool.isRequired,
 };
+
 export default AnimatedHeader;
