@@ -29,8 +29,8 @@ src/**/*.css.map
 /dist
 
 # firebase
-firebase/
-firebase-debug.log
+.firebase/
+.firebase-debug.log
 
 # misc
 .DS_Store
